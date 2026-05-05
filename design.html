@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="akatsuki.png">
+    <title>Poster Design - Fariz Zuhri</title>
+
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: Poppins, sans-serif;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            color: red;
+            text-shadow: 0 0 10px red;
+            margin-bottom: 20px;
+            animation: fadeDown 0.8s ease-out;
+        }
+
+        /* Tombol Back */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: red;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 0 10px red;
+            transition: 0.3s;
+            animation: fadeLeft 0.8s ease-out;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 18px red;
+        }
+
+        /* Container Grid */
+        .poster-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Kartu Poster */
+        .poster-card {
+            background: rgba(255, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            transition: 0.3s;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeZoom 0.8s forwards;
+        }
+
+        /* Delay animasi setiap kartu */
+        .poster-card:nth-child(1) { animation-delay: 0.2s; }
+        .poster-card:nth-child(2) { animation-delay: 0.35s; }
+        .poster-card:nth-child(3) { animation-delay: 0.5s; }
+        .poster-card:nth-child(4) { animation-delay: 0.65s; }
+
+        /* Isi poster */
+        .poster-card img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        /* Hover: gambar ngezoom + merahnya keluar */
+        .poster-card:hover img {
+            transform: scale(1.08);
+            box-shadow: 0 0 20px red;
+        }
+
+        .poster-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px red;
+        }
+
+        /* ANIMASI MASUK */
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeZoom {
+            0% { opacity: 0; transform: scale(0.7); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Kumpulan Poster Fariz Zuhri</h1>
+
+    <a href="about.html" class="back-btn">← Back</a>
+
+    <div class="poster-container">
+        <div class="poster-card">
+            <img src="9.jpeg" alt="Poster 1">
+        </div>
+
+        <div class="poster-card">
+            <img src="10.jpeg" alt="Poster 2">
+        </div>
+
+        <div class="poster-card">
+            <img src="11.jpeg" alt="Poster 3">
+        </div>
+
+        <div class="poster-card">
+            <img src="12.jpeg" alt="Poster 4">
+        </div>
+    </div>
+
+</body>
+</html>

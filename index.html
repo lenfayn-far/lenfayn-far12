@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #001f3f, #000);
+}
+
+/* Glow background */
+body::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: #ff0000;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.3;
+}
+
+.login-box {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 30px;
+  border-radius: 15px;
+  background: rgba(0,0,0,0.8);
+  box-shadow: 0 0 20px #ff0000;
+  width: 300px;
+}
+
+h1 {
+  color: #ff0000;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #111;
+  color: white;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #ffa600;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("login")
+            window.location.href = "home.html";
+        }
+    </script>
+
+<div class="login-box">
+  <h1>LOGIN</h1>
+
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+
+  <button onclick="login()">MASUK</button>
+
+  <div class="error" id="error">Username atau Password salah!</div>
+</div>
+
+<script>
+function login() {
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+
+  if (user === "Fariz" && pass === "20090204") {
+    localStorage.setItem("login", "true");
+    window.location.href = "home.html";
+  } else {
+    document.getElementById("error").style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
